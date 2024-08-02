@@ -1,22 +1,19 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-
-interface CircleT {
-  id: number;
-  points: Point[];
-}
-
-interface Point {
-  x: number;
-  y: number;
-}
+import { ICircle } from '@/types';
+import { useAppDispatch } from '../store/hooks';
+import { addPolygonToList } from '@/store/features/shapeSlice';
+import generateUniqueId from '@/lib/uniqueId';
 
 const Canvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const [circlePoints, setCirclePoints] = useState<CircleT | null>(null);
+  const [polygonPoints, setPolygonPoints] = useState<ICircle | null>(null);
   const [ctx, setCtx] = useState<CanvasRenderingContext2D | null>(null);
+
+  /// redux store
+  const dispatch = useAppDispatch();
 
   /// onMount
   useEffect(() => {
@@ -39,7 +36,7 @@ const Canvas = () => {
   }, []);
 
   const startDrawing = () => {
-    setCirclePoints({ id: 1, points: [] });
+    setPolygonPoints({ id: generateUniqueId(), points: [] });
   };
 
   const draw = ({
@@ -48,7 +45,7 @@ const Canvas = () => {
     const { offsetX, offsetY } = nativeEvent;
 
     if (ctx) {
-      if (!circlePoints) {
+      if (!polygonPoints) {
         ctx.moveTo(offsetX, offsetY);
         return;
       }
@@ -56,21 +53,23 @@ const Canvas = () => {
       ctx.lineTo(offsetX, offsetY);
       ctx.stroke();
 
-      const { id, points } = circlePoints;
+      const { id, points } = polygonPoints;
       const newPoints = [...points, { x: offsetX, y: offsetY }];
-      setCirclePoints({ id, points: newPoints });
+      setPolygonPoints({ id, points: newPoints });
     }
   };
 
   const stopDrawing = () => {
-    if (circlePoints && ctx) {
-      const { points } = circlePoints;
+    if (polygonPoints && ctx) {
+      const { points } = polygonPoints;
       if (points.length > 1) {
         const { x, y } = points[0];
         ctx.lineTo(x, y);
         ctx.stroke();
       }
-      setCirclePoints(null);
+
+      dispatch(addPolygonToList(polygonPoints));
+      setPolygonPoints(null);
     }
   };
 
