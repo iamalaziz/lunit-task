@@ -62,8 +62,16 @@ const Canvas = () => {
     }
   };
 
-  const finishDrawing = () => {
-    setCirclePoints(null);
+  const stopDrawing = () => {
+    if (circlePoints && ctx) {
+      const { points } = circlePoints;
+      if (points.length > 1) {
+        const { x, y } = points[0];
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      }
+      setCirclePoints(null);
+    }
   };
 
   return (
@@ -75,7 +83,8 @@ const Canvas = () => {
         ref={canvasRef}
         onMouseDown={startDrawing}
         onMouseMove={draw}
-        onMouseUp={finishDrawing}
+        onMouseUp={stopDrawing}
+        onMouseLeave={stopDrawing}
         id="drawing-area"
       ></canvas>
     </div>
