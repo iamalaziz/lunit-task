@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import shapeReducer from './features/shapeSlice';
 
 export const store = configureStore({
-  reducer: { shapes: shapeReducer },
-  devTools: process.env.NODE_ENV !== 'production',
+	reducer: { shapes: shapeReducer },
+	devTools: process.env.NODE_ENV !== 'production',
 });
 
 export type RootState = ReturnType<typeof store.getState>;

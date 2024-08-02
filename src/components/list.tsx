@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 export default function List() {
-  return (
-    <div className='border border-gray-500 rounded-xl min-w-[300px]'>
-      <h2>List</h2>
-    </div>
-  )
+	return (
+		<div className="min-w-[300px] rounded-xl border border-gray-500">
+			<h2>List</h2>
+		</div>
+	);
 }
