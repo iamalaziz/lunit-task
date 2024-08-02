@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { useAppDispatch } from '../store/hooks';
 
-import generateUniqueId from '@/lib/uniqueId';
+import generateUniqueId from '@/lib/utils';
 import { addPolygonToList } from '@/store/features/shapeSlice';
 import { ICircle } from '@/types';
 
