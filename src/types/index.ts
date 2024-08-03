@@ -7,3 +7,8 @@ export interface IPoint {
 	x: number;
 	y: number;
 }
+
+export interface ISettings {
+	deleteMode: boolean;
+	theme: 'light' | 'dark';
+}

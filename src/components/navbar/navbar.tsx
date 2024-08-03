@@ -1,8 +1,12 @@
-import DeleteMode from '../delete-mode';
-
+'use client'
+import DeleteMode from '@/components/delete-mode';
 import { ThemeSwitcher } from '@/components/theme-switcher';
+import { Button } from '../ui/button';
+import { useAppDispatch } from '../../store/hooks';
+import { emptyList } from '@/store/features/shapeSlice';
 
 export const Navbar = async () => {
+	const dispatch = useAppDispatch();
 	return (
 		<header className="w-full border-b">
 			<div className="container flex h-16 items-center justify-between">
@@ -10,6 +14,9 @@ export const Navbar = async () => {
 					{'>'} _draw
 				</a>
 				<div className="flex gap-2">
+					<Button variant="destructive" onClick={() => dispatch(emptyList())}>
+						Clear All
+					</Button>
 					<DeleteMode />
 					<ThemeSwitcher />
 				</div>

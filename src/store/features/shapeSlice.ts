@@ -16,8 +16,9 @@ export const shapeSlice = createSlice({
 				return state.filter((shape) => shape.id !== payload);
 			}
 		},
+		emptyList: (state) => state = []
 	},
 });
 
-export const { addPolygonToList, removePolygonFromList } = shapeSlice.actions;
+export const { addPolygonToList, removePolygonFromList, emptyList } = shapeSlice.actions;
 export default shapeSlice.reducer;

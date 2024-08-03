@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { ISettings } from '@/types';
 
-const initialState = {
+const initialState: ISettings = {
 	deleteMode: false,
 	theme: 'light',
 };

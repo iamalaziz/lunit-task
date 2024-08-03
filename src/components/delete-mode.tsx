@@ -19,8 +19,7 @@ const DeleteMode = ({ className }: DeleteModeProps) => {
 
 	return (
 		<Button
-			className={`${className} ${deleteMode ? 'bg-red-500 text-white hover:bg-red-400' : ''}`}
-			variant="secondary"
+			variant={deleteMode ? "destructive" : "secondary"}
 			size="icon"
 			onClick={() => dispatch(switchDeleteMode())}
 		>
