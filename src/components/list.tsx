@@ -10,7 +10,7 @@ export default function List() {
 	return (
 		<div className="min-w-[200px] rounded-xl border border-slate-300">
 			<h2 className="border-b border-slate-300 p-2 px-4 font-semibold text-blue-600">List</h2>
-			<ul className="">
+			<ul className="max-h-[80vh] overflow-hidden overflow-y-auto">
 				{polygons.map((polygon, index) => (
 					<li
 						key={polygon.id}

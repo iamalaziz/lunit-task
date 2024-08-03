@@ -1,14 +1,10 @@
-import { Button } from '@/components/ui/button';
-
 export const Footer = () => {
 	return (
-		<footer className="text-muted-foreground w-full text-center text-sm">
+		<footer className="text-muted-foreground w-full py-4 text-center text-sm">
 			© {new Date().getFullYear()} By{' '}
-			<Button variant="link" asChild>
-				<a href="https://github.com/iamalaziz" target="_blank">
-					Abdulaziz Mashrabov
-				</a>
-			</Button>
+			<a href="https://github.com/iamalaziz" target="_blank" className="font-semibold text-gray-600">
+				Abdulaziz Mashrabov
+			</a>
 		</footer>
 	);
 };

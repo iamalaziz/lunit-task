@@ -51,7 +51,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border box-border;
     /* outline: 1px solid red; */
   }
   body {

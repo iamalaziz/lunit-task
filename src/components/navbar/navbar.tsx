@@ -1,11 +1,12 @@
-'use client'
+'use client';
+import { useAppDispatch } from '../../store/hooks';
+import { Button } from '../ui/button';
+
 import DeleteMode from '@/components/delete-mode';
 import { ThemeSwitcher } from '@/components/theme-switcher';
-import { Button } from '../ui/button';
-import { useAppDispatch } from '../../store/hooks';
 import { emptyList } from '@/store/features/shapeSlice';
 
-export const Navbar = async () => {
+export const Navbar = () => {
 	const dispatch = useAppDispatch();
 	return (
 		<header className="w-full border-b">
