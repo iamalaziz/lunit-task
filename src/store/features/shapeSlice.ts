@@ -11,8 +11,13 @@ export const shapeSlice = createSlice({
 		addPolygonToList: (state, { payload }) => {
 			return [...state, payload];
 		},
+		removePolygonFromList: (state, { payload }) => {
+			if (state) {
+				return state.filter((shape) => shape.id !== payload);
+			}
+		},
 	},
 });
 
-export const { addPolygonToList } = shapeSlice.actions;
+export const { addPolygonToList, removePolygonFromList } = shapeSlice.actions;
 export default shapeSlice.reducer;

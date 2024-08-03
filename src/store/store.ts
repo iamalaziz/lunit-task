@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import settingsReducer from './features/settingsSlice';
 import shapeReducer from './features/shapeSlice';
 
 export const store = configureStore({
-	reducer: { shapes: shapeReducer },
+	reducer: { shapes: shapeReducer, settings: settingsReducer },
 	devTools: process.env.NODE_ENV !== 'production',
 });
 
