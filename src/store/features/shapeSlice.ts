@@ -16,7 +16,7 @@ export const shapeSlice = createSlice({
 				return state.filter((shape) => shape.id !== payload);
 			}
 		},
-		emptyList: (state) => (state = []),
+		emptyList: () => [],
 	},
 });
 
