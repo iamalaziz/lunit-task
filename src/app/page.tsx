@@ -1,5 +1,5 @@
-import Canvas from '@/components/tempCanvas';
-import List from '@/components/tempList';
+import Canvas from '@/components/Canvas';
+import List from '@/components/List';
 
 const Home = () => {
 	return (
