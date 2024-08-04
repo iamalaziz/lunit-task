@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { Icons } from './Icons';
+import { Icons } from './tempIcons';
 
 import { Button } from '@/components/ui/button';
 import { switchDeleteMode } from '@/store/features/settingsSlice';
