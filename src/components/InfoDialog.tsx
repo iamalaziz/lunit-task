@@ -1,4 +1,4 @@
-import { Icons } from './tempIcons';
+import { Icons } from './Icons';
 
 import { Button } from '@/components/ui/button';
 import {
