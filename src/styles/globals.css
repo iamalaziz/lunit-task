@@ -53,9 +53,14 @@
   * {
     @apply border-border box-border;
     /* outline: 1px solid red; */
+    /* overflow: hidden; */
   }
   body {
     @apply bg-background text-foreground;
+  }
+  canvas {
+    overflow: hidden;
+    touch-action: none;
   }
   .tasks-list {
     list-style-type: '- ';

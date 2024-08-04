@@ -23,7 +23,7 @@ const InfoDialog = () => {
 				<DialogHeader>
 					<DialogTitle>About</DialogTitle>
 					<DialogDescription>
-						<p className="mb-2">
+						<p className="mb-2 text-left">
 							This project is built to pass the Assignment Step in the
 							interview process.
 						</p>
@@ -31,7 +31,7 @@ const InfoDialog = () => {
 
 					<DialogTitle>Tasks</DialogTitle>
 					<DialogDescription>
-						<ul className="tasks-list pl-4">
+						<ul className="tasks-list pl-4 text-left">
 							<li>
 								<strong>Make two components</strong>: Canvas & List
 							</li>
