@@ -1,4 +1,4 @@
-import { Loader2, LogOut, Moon, Sun, Trash2, Info, Github } from 'lucide-react';
+import { Github, Info, Loader2, LogOut, Moon, Sun, Trash2 } from 'lucide-react';
 
 export const Icons = {
 	sun: Sun,
@@ -7,5 +7,5 @@ export const Icons = {
 	loader: Loader2,
 	trash: Trash2,
 	info: Info,
-	github: Github
+	github: Github,
 };

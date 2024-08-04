@@ -1,3 +1,5 @@
+import { Icons } from './Icons';
+
 import { Button } from '@/components/ui/button';
 import {
 	Dialog,
@@ -8,7 +10,6 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from '@/components/ui/dialog';
-import { Icons } from './Icons';
 
 const InfoDialog = () => {
 	return (
@@ -49,7 +50,7 @@ const InfoDialog = () => {
 								<strong>List</strong>:
 								<ul className="tasks-list pl-4">
 									<li>
-										Finished circles' names are displayed in
+										Finished circle names are displayed in
 										the List component.
 									</li>
 								</ul>

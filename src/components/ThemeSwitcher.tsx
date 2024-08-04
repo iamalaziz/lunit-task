@@ -16,7 +16,10 @@ type ThemeSwitcherProps = {
 
 export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
 	const { theme, setTheme } = useTheme();
-
+	useEffect(() => {
+		const themeSystem = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		setTheme(themeSystem);
+	}, []);
 	/// redux store
 	const dispatch = useAppDispatch();
 
