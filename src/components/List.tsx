@@ -11,7 +11,7 @@ export default function List() {
 		<div className="min-w-[200px] rounded-xl border border-slate-300">
 			<h2 className="border-b border-slate-300 p-2 px-4 font-semibold text-blue-600">List</h2>
 			<ul className="max-h-[80vh] overflow-hidden overflow-y-auto">
-				{polygons.length == 0 && <p className='text-primary text-center my-2 '>Empty</p>}
+				{polygons.length == 0 && <p className="text-primary my-2 text-center ">Empty</p>}
 				{polygons?.map((polygon, index) => (
 					<li
 						key={polygon.id}

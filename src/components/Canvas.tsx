@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useRef } from 'react';
+
 import { useAppDispatch, useAppSelector } from '../store/hooks';
+
 import { useCanvas } from '@/hooks/useCanvas';
 import { useDrawing } from '@/hooks/useDrawing';
-import { IPoint } from '@/types';
 import { useTouchHandlers } from '@/hooks/useTouchHandlers';
+import { IPoint } from '@/types';
 
 const Canvas: React.FC = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);

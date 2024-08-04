@@ -1,11 +1,12 @@
 import React from 'react';
+
 import { IPoint } from '@/types';
 
 export const useTouchHandlers = (
 	canvasRef: React.RefObject<HTMLCanvasElement>,
 	deleteMode: boolean,
 	startDrawing: () => void,
-	draw: (event: any) => void,
+	draw: (event: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => void,
 	stopDrawing: () => void,
 	removePolygon: (point: IPoint) => void
 ) => {
@@ -36,7 +37,10 @@ export const useTouchHandlers = (
 		const canvas = canvasRef.current;
 		if (canvas) {
 			const touchPos = getTouchPos(canvas, event);
-			draw({ nativeEvent: { offsetX: touchPos.x, offsetY: touchPos.y } } as any);
+			draw({ nativeEvent: { offsetX: touchPos.x, offsetY: touchPos.y } } as React.MouseEvent<
+				HTMLCanvasElement,
+				MouseEvent
+			>);
 		}
 	};
 
