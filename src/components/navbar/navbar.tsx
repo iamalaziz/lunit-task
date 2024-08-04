@@ -3,6 +3,7 @@ import { useAppDispatch } from '../../store/hooks';
 import { Button } from '../ui/button';
 
 import DeleteMode from '@/components/DeleteMode';
+import InfoDialog from '@/components/InfoDialog'
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { emptyList } from '@/store/features/shapeSlice';
 
@@ -20,6 +21,7 @@ export const Navbar = () => {
 					</Button>
 					<DeleteMode />
 					<ThemeSwitcher />
+					<InfoDialog />
 				</div>
 			</div>
 		</header>
