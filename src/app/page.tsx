@@ -1,5 +1,5 @@
-import Canvas from '@/components/canvas';
-import List from '@/components/list';
+import Canvas from '@/components/Canvas';
+import List from '@/components/List';
 
 const Home = () => {
 	return (

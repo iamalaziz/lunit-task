@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 
 import { useAppDispatch } from '../store/hooks';
 
-import { Icons } from '@/components/icons';
+import { Icons } from '@/components/Icons';
 import { Button } from '@/components/ui/button';
 import { switchTheme } from '@/store/features/settingsSlice';
 
